@@ -1,0 +1,36 @@
+<div class="background">
+    <div class="modal">
+        <div class="card card-outline-success card-mensaje" >
+            <div class="card-header card-info card-header">
+                <div class="title">Libro de Obras</div>
+                <div class="action"><i class="fa fa-times" aria-hidden="true" (click)="close()"></i></div>
+            </div>
+            <div class="card-block">
+                <table class="table table-striped ">
+                    <thead>
+                        <tr>
+                            <th><b>Titulo</b></th>
+                            <th><b>Tipo</b></th>
+                            <th><b>Fecha</b></th>
+                            <th><b>Mensaje</b></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let registro of registros">
+                            <td>{{ registro.TITULO }}</td>
+                            <td>{{ registro.TIPO }}</td>
+                            <td>{{ registro.createdAt | date : 'dd/MM/yyyy'}}</td>
+                            <td>{{ registro.MENSAJE }}</td>
+                        </tr>
+                        <tr *ngIf="(registros.length == 0)"><td colspan="4">No existen registros</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="card-footer">
+                <div class="buttons">
+                    <div class="btn-group" role="group" ><button type="button" class="btn btn-warning" (click)="close()"><i class="fa fa-chevron-left" aria-hidden="true"></i> Volver</button></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

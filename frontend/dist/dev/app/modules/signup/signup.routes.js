@@ -1,0 +1,10 @@
+"use strict";
+var index_1 = require('./index');
+exports.SignupRoutes = [
+    {
+        path: 'signup',
+        component: index_1.SignupComponent
+    }
+];
+
+//# sourceMappingURL=data:application/json;charset=utf8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImFwcC9tb2R1bGVzL3NpZ251cC9zaWdudXAucm91dGVzLnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7QUFDQSxzQkFBZ0MsU0FBUyxDQUFDLENBQUE7QUFFN0Isb0JBQVksR0FBWTtJQUNsQztRQUNFLElBQUksRUFBRSxRQUFRO1FBQ2QsU0FBUyxFQUFFLHVCQUFlO0tBQzNCO0NBQ0gsQ0FBQyIsImZpbGUiOiJhcHAvbW9kdWxlcy9zaWdudXAvc2lnbnVwLnJvdXRlcy5qcyIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCB7IFJvdXRlIH0gZnJvbSAnQGFuZ3VsYXIvcm91dGVyJztcbmltcG9ydCB7IFNpZ251cENvbXBvbmVudCB9IGZyb20gJy4vaW5kZXgnO1xuXG5leHBvcnQgY29uc3QgU2lnbnVwUm91dGVzOiBSb3V0ZVtdID0gW1xuICBcdHtcbiAgICBcdHBhdGg6ICdzaWdudXAnLFxuICAgIFx0Y29tcG9uZW50OiBTaWdudXBDb21wb25lbnRcbiAgXHR9XG5dO1xuIl19

@@ -1,0 +1,8 @@
+"use strict";
+function __export(m) {
+    for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
+}
+__export(require('./bsComponent.component'));
+__export(require('./bsComponent.routes'));
+
+//# sourceMappingURL=data:application/json;charset=utf8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImFwcC9tb2R1bGVzL2Rhc2hib2FyZC9leGFtcGxlcy9icy1jb21wb25lbnQvaW5kZXgudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7OztBQUdBLGlCQUFjLHlCQUF5QixDQUFDLEVBQUE7QUFDeEMsaUJBQWMsc0JBQXNCLENBQUMsRUFBQSIsImZpbGUiOiJhcHAvbW9kdWxlcy9kYXNoYm9hcmQvZXhhbXBsZXMvYnMtY29tcG9uZW50L2luZGV4LmpzIiwic291cmNlc0NvbnRlbnQiOlsiLyoqXG4qXHRUaGlzIGJhcnJlbCBmaWxlIHByb3ZpZGVzIHRoZSBleHBvcnQgZm9yIHRoZSBsYXp5IGxvYWRlZCBCU0NvbXBvbmVudC5cbiovXG5leHBvcnQgKiBmcm9tICcuL2JzQ29tcG9uZW50LmNvbXBvbmVudCc7XG5leHBvcnQgKiBmcm9tICcuL2JzQ29tcG9uZW50LnJvdXRlcyc7XG4iXX0=

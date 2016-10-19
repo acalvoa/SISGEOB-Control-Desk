@@ -1,0 +1,15 @@
+.user-root {
+  width: 100%;
+  padding: 10px; }
+
+:host {
+  width: 100%; }
+
+.card-uss {
+  background: #1cc09f !important;
+  color: #FFF; }
+
+.new-user-body {
+  padding: 10px; }
+
+/*# sourceMappingURL=users.component.css.map */

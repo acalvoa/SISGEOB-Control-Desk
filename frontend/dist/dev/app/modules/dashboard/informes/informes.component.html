@@ -1,0 +1,121 @@
+<div class="home-root" *ngIf="view==='visor'">
+	<div class="row">
+		<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+			<div class="card card-outline-primary filtros" >
+			  	<div class="card-header card-primary card-sisgeob-header">Inversión por Servicio </div>
+				<canvas baseChart
+			      class="chart"
+			      [datasets]="datasets"
+			      [labels]="labels"
+			      [options]="options"
+			      [chartType]="'pie'" *ngIf="inv_services">
+			    </canvas>
+			</div>
+		</div>
+		
+		<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+			<div class="card card-outline-danger alertas" >
+			  	<div class="card-header card-danger card-sisgeob-header header-table">Cantidad de Alertas</div>
+			  	<canvas baseChart
+			      class="chart"
+			      [datasets]="alertas"
+			      [labels]="labels_a"
+			      [options]="options"
+			      [chartType]="'pie'" *ngIf="inv_services">
+			    </canvas>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+			<div class="card card-outline-success comunicacion" >
+			  	<div class="card-header card-success card-sisgeob-header">
+			  		<div class="titleFilter">Mis Informes<input type="text" class="filtro_txt" #filtro_txt (change)="filtrar_informe(filtro_txt.value)"/></div>
+			  		
+			  	</div>
+			  	<table class="table table-striped ">
+					<thead>
+						<tr class="header-table">
+							<th><b>Nombre</b></th>
+							<th><b>Descripción</b></th>
+							<th><b>Fecha</b></th>
+							<th><b></b></th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr *ngFor="let informe of s_informes">
+							<td>{{ informe.NOMBRE }}</td>
+							<td>{{ informe.DESCRIPCION }}</td>
+							<td>{{ informe.createdAt | date : 'dd/MM/yyyy'}}</td>
+							<td class="actions-wizard">
+								<div placement="top" ngbTooltip="Editar"><i class="fa fa-edit btn-action" aria-hidden="true"></i></div>
+								<div placement="top" ngbTooltip="Borar"><i class="fa fa-trash btn-action" aria-hidden="true"></i></div>
+							</td>
+						</tr>
+						<tr *ngIf="(s_informes && s_informes.length == 0)"><td colspan="4">No existen informes personalizados.</td></tr>
+					</tbody>
+				</table>
+				<div class="card-footer">
+					<div class="btnCreate"><div class="btn-group" role="group" ><button type="button" class="btn btn-primary" (click)="view='create'"><i class="fa fa-plus" aria-hidden="true"></i> Crear</button></div></div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="home-root" *ngIf="view==='create'">
+	<div class="row">
+		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+			<form (submit)="save($event)">
+				<div class="card card-outline-success comunicacion" >
+				  	<div class="card-header card-success card-sisgeob-header">
+				  		<div class="titleFilter">Asistente de Creación de Informes</div>
+				  	</div>
+				  	<div class="card-block">
+				  		<div class="form-group">
+	                        <label for="nombre-txt">Nombre del informe</label>
+	                        <input type="text" class="form-control" [(ngModel)]="inReg.NOMBRE" name="nombre" id="nombre-txt" placeholder="Nombre Anotación" required>
+	                        <small class="form-text text-muted">Nombre del informe. Se utiliza para filtros posteriores</small>
+	                    </div>
+	                    <div class="form-group">
+	                      <label for="mensaje-txt">Descripción</label>
+	                      <textarea placeholder="Escriba mensaje" class="form-control" [(ngModel)]="inReg.DESCRIPCION" name="descripcion" id="mensaje-txt" required></textarea>
+	                    </div>
+				  	</div>
+				  	<div class="card-header card-success card-sisgeob-header">
+				  		<div class="titleFilter">Campos y Reglas</div>
+				  	</div>
+				  	<table class="table table-striped ">
+						<thead>
+							<tr class="header-table">
+								<th><b>Nombre</b></th>
+								<th><b>Tipo</b></th>
+								<th><b>Descripción</b></th>
+								<th><b>Fecha Creación</b></th>
+								<th><b></b></th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr *ngFor="let reglas of inReg.ESTRUCTURA">
+								<td>{{ reglas.NOMBRE }}</td>
+								<td>{{ reglas.TIPO }}</td>
+								<td>{{ reglas.DESCRIPCION }}</td>
+								<td class="actions-wizard">
+								<div><i class="fa fa-pencil-square-o" aria-hidden="true"></i></div>
+								<div><i class="fa fa-trash btn-action" aria-hidden="true"></i></div>
+								</td>
+							</tr>
+							<tr *ngIf="(inReg.ESTRUCTURA && inReg.ESTRUCTURA.length == 0)"><td colspan="5">Este informe no posee campos y reglas.</td></tr>
+							
+						</tbody>
+					</table>
+					<br>
+					<div class="card-footer">
+						<div class="btn-group" role="group" ><button type="button" class="btn btn-warning" (click)="view='visor'"><i class="fa fa-chevron-left" aria-hidden="true"></i> Volver</button></div>
+						<div class="btnCreate"><div class="btn-group" role="group" ><button type="button" class="btn btn-primary" (click)="view='visor'"><i class="fa fa-plus" aria-hidden="true"></i> Agregar Nuevo Elemento</button></div></div>
+						<div class="btnCreate"><div class="btn-group" role="group" ><button type="submit" class="btn btn-primary" ><i class="fa fa-floppy-o" aria-hidden="true"></i> Guardar Informe</button></div></div>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>

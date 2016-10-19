@@ -1,0 +1,99 @@
+:host{
+	width:100%;
+}
+.home-root{
+	padding:10px;
+	height:100%;
+	width:100%;
+}
+.card{
+	width:100%;
+}
+.card-outline-success{
+	border: 1px solid #5cb85c;
+}
+.card-outline-danger{
+	border: 1px solid #d9534f;
+}
+.card-outline-primary{
+	border: 1px solid #0275d8;
+}
+.card-sisgeob-header{
+	color:#FFF;
+}
+.filtros{
+	min-height:440px;
+	overflow:hidden;
+	table{
+		margin-bottom: 0;
+	}
+	.filtro_txt{
+		border: 1px solid #FFF;
+		color: #FFF;
+		background: #0275d8;
+		border-radius:2.5px;
+		padding: 0px 5px;
+		margin-left: 10px;
+	}
+	td{
+		cursor: pointer;
+	}
+	canvas{
+		margin-top:10px;
+		margin-bottom:10px;
+	}
+}
+.comunicacion{
+	min-height:auto;
+	table{
+		margin-bottom: 0;
+		td{
+			cursor:pointer;
+
+		}
+	}
+	.filtro_txt{
+		border: 1px solid #FFF;
+		color: #FFF;
+		background: #5cb85c;
+		border-radius:2.5px;
+		padding: 0px 5px;
+		margin-left: 10px;
+	}
+	.btn-action{
+		cursor: pointer;
+	}
+	.card-sisgeob-header{
+		display: flex;
+		flex-direction: row;
+		.btnCreate{
+			display: flex;
+			flex: 1;
+			justify-content:flex-end;
+			.btn{
+				padding: 0px 10px;
+			}
+		}
+		.titleFilter{
+			display: flex;
+			flex: 1;
+		}
+	}
+	.card-footer{
+		display: flex;
+		flex-direction: row;
+		.btn-group{
+			margin-right:10px;
+		}
+	}
+	.actions-wizard{
+		display: flex;
+		flex-direction: row;
+		div{
+			margin-right: 10px;
+		}
+	}
+	.reglas-table{
+		min-height: 200px;
+	}
+}

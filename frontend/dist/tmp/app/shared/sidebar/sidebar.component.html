@@ -1,0 +1,31 @@
+<nav class="sidebar fix-sidebar" [class.sidebarPushRight]="!isActive">
+    <ul class="list-group">
+        <a [routerLink]="['/dashboard']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+            <i class="fa fa-fw fa-dashboard"></i> Inicio
+        </a>
+        <a [routerLink]="['/informes']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+            <i class="fa fa-bar-chart" aria-hidden="true"></i> Informes
+        </a>
+        <a [routerLink]="['/mapa']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+            <i class="fa fa-map-marker" aria-hidden="true"></i> Mis Mapas
+        </a>
+        <a [routerLink]="['/semaforo']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+            <i class="fa fa-ellipsis-v" aria-hidden="true"></i> Semaforo
+        </a>
+        <div class="nested-menu">
+            <a class="list-group-item" (click)="addExpandClass('superadmin')">
+                <span><i class="fa fa-user" aria-hidden="true"></i> &nbsp; Super Admin</span>
+            </a>
+            <li class="hidemenu" [class.expand]="showMenu === 'superadmin'">
+                <ul class="submenu">
+                    <li>
+                        <a [routerLink]="['/users']" [routerLinkActive]="['router-link-active']" href><span><i class="fa fa-user-plus" aria-hidden="true"></i> &nbsp; Administrar Usuarios</span></a>
+                    </li>
+                </ul>
+            </li>
+        </div>
+        <!-- <a [routerLink]="['blankpage']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+            <i class="fa fa-file-o"></i> &nbsp;BlankPage
+        </a> -->
+    </ul>
+</nav>

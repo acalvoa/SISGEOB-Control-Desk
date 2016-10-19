@@ -1,0 +1,27 @@
+.container-body {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100%;
+  width: 100%; }
+  .container-body .main-container {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    width: 100%; }
+
+:host {
+  min-height: calc(100% - 60px);
+  width: 100%; }
+
+.navbar-container {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: 60px; }
+
+.main-container {
+  margin: 0 0 0 0;
+  padding: 0 0 0 0; }
+
+/*# sourceMappingURL=dashboard.component.css.map */

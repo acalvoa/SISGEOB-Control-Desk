@@ -1,0 +1,1 @@
+{"version":3,"sources":["app/modules/dashboard/mapa/mapa.component.scss"],"names":[],"mappings":"AAAA;EACE,aAAa;EACb,YAAY,EACb;;AACD;EACC,aAAY;EACZ,YAAW,EACX","file":"mapa.component.css","sourcesContent":[".sebm-google-map-container {\n  height: 100%;\n  width: 100%;\n}\n:host{\n\theight:100%;\n\twidth:100%;\n}"]}

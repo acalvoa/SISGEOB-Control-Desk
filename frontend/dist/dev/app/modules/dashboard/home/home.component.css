@@ -1,0 +1,82 @@
+:host {
+  width: 100%; }
+
+.home-root {
+  padding: 10px;
+  height: 100%;
+  width: 100%; }
+
+.card {
+  width: 100%; }
+
+.card-outline-success {
+  border: 1px solid #5cb85c; }
+
+.card-outline-danger {
+  border: 1px solid #d9534f; }
+
+.card-outline-primary {
+  border: 1px solid #0275d8; }
+
+.card-sisgeob-header {
+  color: #FFF; }
+
+.filtros {
+  min-height: 440px;
+  max-height: 440px;
+  overflow: hidden; }
+  .filtros table {
+    margin-bottom: 0; }
+  .filtros .filtro_txt {
+    border: 1px solid #FFF;
+    color: #FFF;
+    background: #0275d8;
+    border-radius: 2.5px;
+    padding: 0px 5px;
+    margin-left: 10px; }
+  .filtros td {
+    cursor: pointer; }
+
+.comunicacion {
+  min-height: 440px;
+  max-height: 440px; }
+  .comunicacion table {
+    margin-bottom: 0; }
+    .comunicacion table td {
+      cursor: pointer; }
+  .comunicacion .btn-action {
+    cursor: pointer; }
+
+.alertas {
+  min-height: 440px;
+  max-height: 440px;
+  font-size: 13px; }
+  .alertas .header-table {
+    font-size: 16px; }
+
+.obras {
+  min-height: 400px; }
+  .obras .semaforo span {
+    color: #666;
+    font-size: 22px;
+    margin-left: 5px;
+    margin-right: 5px; }
+  .obras .semaforo .rojo {
+    color: red !important; }
+  .obras .semaforo .amarillo {
+    color: yellow !important; }
+  .obras .semaforo .verde {
+    color: green !important; }
+  .obras .actions {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-direction: row;
+        -ms-flex-direction: row;
+            flex-direction: row; }
+    .obras .actions div {
+      height: 30px; }
+  .obras i {
+    cursor: pointer; }
+
+/*# sourceMappingURL=home.component.css.map */

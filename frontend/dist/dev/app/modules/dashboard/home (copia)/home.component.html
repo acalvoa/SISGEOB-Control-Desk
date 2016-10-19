@@ -1,0 +1,107 @@
+<div class="home-root">
+	<div class="row">
+		<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+			<div class="card card-outline-primary filtros" >
+			  	<div class="card-header card-primary card-sisgeob-header">Filtro por Servicio: <input type="text" class="filtro_txt" #filtro_txt (change)="filtrar_servicio(filtro_txt.value)"/></div>
+				<table class="table table-striped">
+					<thead>
+						<tr>
+							<th><b>Nombre</b></th>
+							<th><b>Cant. de Obras</b></th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr *ngFor="let servicio of s_filtro" (click)="filter_by_service(servicio.NOMBRE)">
+							<td>{{ servicio.NOMBRE }}</td>
+							<td>{{ servicio.OBRAS ? servicio.OBRAS.length : 0 }}</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+		<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+			<div class="card card-outline-success comunicacion" >
+			  	<div class="card-header card-success card-sisgeob-header">Mensajes de Servicios</div>
+			  	<table class="table table-striped">
+					<thead>
+						<tr>
+							<th><b>Servicio</b></th>
+							<th><b>Fecha</b></th>
+							<th><b></b></th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr *ngFor="let mensaje of s_mensajes" placement="bottom" ngbTooltip="{{ mensaje.MENSAJE }}">
+							<td>{{ mensaje.SERVICIO.NOMBRE }}</td>
+							<td>{{ mensaje.createdAt | date : 'dd/MM/yyyy' }}</td>
+							<td><i class="fa fa-reply btn-action" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;<i class="fa fa-trash btn-action" aria-hidden="true"></i></td>
+						</tr>
+						<tr *ngIf="(s_mensajes && s_mensajes.length == 0)"><td colspan="4">No existen mensajes para el servicio.</td></tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+		<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+			<div class="card card-outline-danger alertas" >
+			  	<div class="card-header card-danger card-sisgeob-header header-table">Alertas</div>
+			  	<table class="table table-striped ">
+					<thead>
+						<tr class="header-table">
+							<th><b>Servicio</b></th>
+							<th><b>Alerta</b></th>
+							<th><b>Fecha</b></th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr *ngFor="let alerta of s_alertas">
+							<td>{{ alerta.SERVICIO.NOMBRE }}</td>
+							<td>{{ alerta.ALERTA }}</td>
+							<td>{{ alerta.createdAt | date : 'dd/MM/yyyy'}}</td>
+						</tr>
+						<tr *ngIf="(s_alertas && s_alertas.length == 0)"><td colspan="4">No existen alertas para el servicio.</td></tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+			<div class="card card-outline-success obras" >
+			  	<div class="card-header card-info card-sisgeob-header">Obras en Seguimiento</div>
+			  	<table class="table table-striped ">
+					<thead>
+						<tr>
+							<th><b>Nombre</b></th>
+							<th><b>Servicio</b></th>
+							<th><b>Monto</b></th>
+							<th><b>Avance Fisico</b></th>
+							<th><b>Avance Financiero</b></th>
+							<th><b>Mensajes sin leer</b></th>
+							<th><b>Fecha de Entrega</b></th>
+							<th><b></b></th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr *ngFor="let obra of s_obras">
+							<td>{{ obra.NOMBRE }}</td>
+							<td>{{ obra.SERVICIO.NOMBRE }}</td>
+							<td>{{ obra.MONTO | CLP}}</td>
+							<td>{{ obra.AVANCE_FISICO }}%</td>
+							<td>{{ obra.AVANCE_FINANCIERO }}%</td>
+							<td>{{ obra.MENSAJES }}</td>
+							<td>{{ obra.FECHA_ENTREGA | date : 'dd/MM/yyyy'}}</td>
+							<td></td>
+							<td class="actions">
+								<div placement="top" ngbTooltip="Enviar Mensaje a Entidad" (click)="send_message(obra.ID_OBRA, obra.SERVICIO.ID_SERVICIO)"><i class="fa fa-envelope" aria-hidden="true" ></i></div>&nbsp;&nbsp;&nbsp;
+								<div placement="top" ngbTooltip="Mis anotaciones" (click)="open_anotaciones(obra.ID_OBRA)" ><i class="fa fa-pencil-square-o" aria-hidden="true" ></i></div>&nbsp;&nbsp;&nbsp;
+								<div placement="top" ngbTooltip="Libro de Obras" (click)="open_book(obra.ID_OBRA)"><i class="fa fa-book" aria-hidden="true" ></i></div></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+</div>
+<mensajes (view)="view_msg($event)" [obra]="obra_mensaje" [servicio]="servicio_mensaje" *ngIf="view_mensaje"></mensajes>
+<libro-de-obra (view)="view_book($event)" [obra]="obra_libro" *ngIf="view_libro"></libro-de-obra>
+<anotaciones (view)="view_anota($event)" [obra]="obra_anotaciones" [registros]="obras_anotaciones" *ngIf="view_anotaciones"></anotaciones>

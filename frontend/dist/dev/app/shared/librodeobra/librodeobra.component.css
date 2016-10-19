@@ -1,0 +1,114 @@
+.background {
+  position: absolute;
+  z-index: 10;
+  top: 0px;
+  left: 0px;
+  background: rgba(0, 0, 0, 0.6);
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100%;
+  width: 100%;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-align-content: center;
+      -ms-flex-line-pack: center;
+          align-content: center;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column; }
+  .background .modal {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    width: 50%;
+    height: 50%;
+    border: 1px #666 solid;
+    left: 25%;
+    top: 25%; }
+    .background .modal .card-mensaje {
+      width: 100%;
+      height: 100%;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-flex-direction: column;
+          -ms-flex-direction: column;
+              flex-direction: column; }
+    .background .modal .card-header {
+      color: #FFF;
+      height: 45px;
+      width: 100%;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-flex-direction: row;
+          -ms-flex-direction: row;
+              flex-direction: row; }
+      .background .modal .card-header .title {
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-flex: 2;
+            -ms-flex: 2;
+                flex: 2;
+        -webkit-justify-content: flex-start;
+            -ms-flex-pack: start;
+                justify-content: flex-start; }
+      .background .modal .card-header .action {
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-flex: 2;
+            -ms-flex: 2;
+                flex: 2;
+        -webkit-justify-content: flex-end;
+            -ms-flex-pack: end;
+                justify-content: flex-end;
+        font-size: 18px;
+        -webkit-align-items: center;
+            -ms-flex-align: center;
+                align-items: center; }
+        .background .modal .card-header .action i {
+          cursor: pointer; }
+    .background .modal .card-block {
+      height: calc(100% - 100px);
+      padding: 0px !important;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex; }
+      .background .modal .card-block textarea {
+        height: 100%;
+        width: 100%; }
+    .background .modal .card-footer {
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-flex-direction: row;
+          -ms-flex-direction: row;
+              flex-direction: row; }
+      .background .modal .card-footer .buttons {
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-flex: 2;
+            -ms-flex: 2;
+                flex: 2;
+        -webkit-justify-content: flex-end;
+            -ms-flex-pack: end;
+                justify-content: flex-end; }
+        .background .modal .card-footer .buttons .btn-group {
+          margin-right: 10px; }
+
+:host {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  left: 0px; }
+
+/*# sourceMappingURL=librodeobra.component.css.map */

@@ -1,0 +1,61 @@
+<div class="background">
+    <div class="modal">
+        <div class="card card-outline-success card-mensaje" *ngIf="views == 'visor'">
+            <div class="card-header card-info card-header">
+                <div class="title">Anotaciones</div>
+                <div class="action"><i class="fa fa-times" aria-hidden="true" (click)="close()"></i></div>
+            </div>
+            <div class="card-block visor">
+                <table class="table table-striped ">
+                    <thead>
+                        <tr>
+                            <th><b>Nombre</b></th>
+                            <th><b>Mensaje</b></th>
+                            <th><b>Fecha</b></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let registro of registros">
+                            <td>{{ registro.NOMBRE }}</td>
+                            <td>{{ registro.MENSAJE }}</td>
+                            <td>{{ registro.createdAt | date : 'dd/MM/yyyy'}}</td>
+                        </tr>
+                        <tr *ngIf="(registros.length == 0)"><td colspan="4">No existen registros</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="card-footer">
+                <div class="buttons">
+                    <div class="btn-group" role="group" ><button type="button" class="btn btn-warning" (click)="close()"><i class="fa fa-chevron-left" aria-hidden="true"></i> Cerrar</button></div>
+                    <div class="btn-group" role="group" ><button type="button" class="btn btn-primary" (click)="views='crear'"><i class="fa fa-plus" aria-hidden="true"></i> Crear</button></div>
+                </div>
+            </div>
+        </div>
+        <div class="card card-outline-success card-mensaje" *ngIf="views == 'crear'">
+            <form (submit)="createUser($event)">
+                <div class="card-header card-info card-header">
+                    <div class="title">Crear Anotacion</div>
+                    <div class="action"><i class="fa fa-times" aria-hidden="true" (click)="close()"></i></div>
+                </div>
+                <div class="card-block">
+                        <div class="form-group">
+                            <label for="nombre-txt">Nombre de la anotación</label>
+                            <input type="text" class="form-control" [(ngModel)]="inReg.NOMBRE" name="nombre" id="nombre-txt" placeholder="Nombre Anotación" required>
+                            <small class="form-text text-muted">Se utilizara para diferenciarla.</small>
+                        </div>
+                        <div class="form-group">
+                          <label for="mensaje-txt">Anotación</label>
+                          <textarea placeholder="Escriba mensaje" class="form-control" [(ngModel)]="inReg.MENSAJE" name="mensaje" id="mensaje-txt" required></textarea>
+                        </div>
+                </div>
+                <div class="card-footer">
+                    <div class="buttons">
+                        <div class="btn-group" role="group" ><button type="button" class="btn btn-danger" (click)="close()"><i class="fa fa-chevron-left" aria-hidden="true"></i> Cerrar</button></div>
+                        <div class="btn-group" role="group" ><button type="button" class="btn btn-warning" (click)="views='visor'"><i class="fa fa-chevron-left" aria-hidden="true"></i> Volver</button></div>
+                        <div class="btn-group" role="group" ><button type="button" class="btn btn-primary" (click)="create()"><i class="fa fa-plus" aria-hidden="true"></i> Crear</button></div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,104 @@
+:host {
+  width: 100%; }
+
+.home-root {
+  padding: 10px;
+  height: 100%;
+  width: 100%; }
+
+.card {
+  width: 100%; }
+
+.card-outline-success {
+  border: 1px solid #5cb85c; }
+
+.card-outline-danger {
+  border: 1px solid #d9534f; }
+
+.card-outline-primary {
+  border: 1px solid #0275d8; }
+
+.card-sisgeob-header {
+  color: #FFF; }
+
+.filtros {
+  min-height: 440px;
+  overflow: hidden; }
+  .filtros table {
+    margin-bottom: 0; }
+  .filtros .filtro_txt {
+    border: 1px solid #FFF;
+    color: #FFF;
+    background: #0275d8;
+    border-radius: 2.5px;
+    padding: 0px 5px;
+    margin-left: 10px; }
+  .filtros td {
+    cursor: pointer; }
+  .filtros canvas {
+    margin-top: 10px;
+    margin-bottom: 10px; }
+
+.comunicacion {
+  min-height: auto; }
+  .comunicacion table {
+    margin-bottom: 0; }
+    .comunicacion table td {
+      cursor: pointer; }
+  .comunicacion .filtro_txt {
+    border: 1px solid #FFF;
+    color: #FFF;
+    background: #5cb85c;
+    border-radius: 2.5px;
+    padding: 0px 5px;
+    margin-left: 10px; }
+  .comunicacion .btn-action {
+    cursor: pointer; }
+  .comunicacion .card-sisgeob-header {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-direction: row;
+        -ms-flex-direction: row;
+            flex-direction: row; }
+    .comunicacion .card-sisgeob-header .btnCreate {
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-flex: 1;
+          -ms-flex: 1;
+              flex: 1;
+      -webkit-justify-content: flex-end;
+          -ms-flex-pack: end;
+              justify-content: flex-end; }
+      .comunicacion .card-sisgeob-header .btnCreate .btn {
+        padding: 0px 10px; }
+    .comunicacion .card-sisgeob-header .titleFilter {
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-flex: 1;
+          -ms-flex: 1;
+              flex: 1; }
+  .comunicacion .card-footer {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-direction: row;
+        -ms-flex-direction: row;
+            flex-direction: row; }
+    .comunicacion .card-footer .btn-group {
+      margin-right: 10px; }
+  .comunicacion .actions-wizard {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-direction: row;
+        -ms-flex-direction: row;
+            flex-direction: row; }
+    .comunicacion .actions-wizard div {
+      margin-right: 10px; }
+  .comunicacion .reglas-table {
+    min-height: 200px; }
+
+/*# sourceMappingURL=informes.component.css.map */

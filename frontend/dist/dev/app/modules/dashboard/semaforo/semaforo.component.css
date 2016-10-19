@@ -1,0 +1,55 @@
+:host {
+  width: 100%; }
+
+.home-root {
+  height: 100%;
+  width: 100%;
+  padding: 10px; }
+
+.filtros {
+  min-height: 740px;
+  max-height: 740px;
+  overflow: hidden; }
+  .filtros table {
+    margin-bottom: 0; }
+  .filtros .filtro_txt {
+    border: 1px solid #FFF;
+    color: #FFF;
+    background: #0275d8;
+    border-radius: 2.5px;
+    padding: 0px 5px;
+    margin-left: 10px; }
+  .filtros td {
+    cursor: pointer; }
+
+.card {
+  width: 100%; }
+
+.card-outline-success {
+  border: 1px solid #5cb85c; }
+
+.card-outline-danger {
+  border: 1px solid #d9534f; }
+
+.card-outline-primary {
+  border: 1px solid #0275d8; }
+
+.card-sisgeob-header {
+  color: #FFF; }
+
+.semaforo span {
+  color: #666;
+  font-size: 22px;
+  margin-left: 5px;
+  margin-right: 5px; }
+
+.verde {
+  color: green !important; }
+
+.rojo {
+  color: red !important; }
+
+.amarillo {
+  color: yellow !important; }
+
+/*# sourceMappingURL=semaforo.component.css.map */

@@ -1,0 +1,1 @@
+{"version":3,"sources":["app/app.component.scss"],"names":[],"mappings":"AAAA;EACC,0BAAW;EACX,YAAW,EACX","file":"app.component.css","sourcesContent":[":host{\n\theight:calc(100% - 60px);\n\twidth:100%;\n}"]}
